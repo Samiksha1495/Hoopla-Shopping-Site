@@ -1,0 +1,81 @@
+<p-growl [(value)]="msgs"></p-growl>
+
+<div class="row" >
+  <div class="col-md-5 col-md-offset-4 ">
+    <h4>Set your credentials</h4>
+    <marquee behavior="" direction="" class="text-info" ><b>Register to avail exciting offers...</b></marquee>
+    <br>
+    <br>
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="form" >
+      <span class="ui-float-label" >
+        <input type="text" id="float-input" size="30" pInputText type="email" class="ng-dirty ng-invalid" formControlName="emailId" id="uEmailId" >
+        <label for="float-input"><span class="glyphicon glyphicon-envelope"></span>EmailId</label>
+        <span class="text-danger" *ngIf="len>0">Enter another Email! Entered email already exists</span> 
+        <span class="text-danger" *ngIf="registerForm.get('emailId').invalid
+        && registerForm.get('emailId').touched " >Enter a valid emailId
+        </span>
+       <!-- <p-messages severity="error" text="Enter a valid EmailID" ></p-messages> -->
+      </span>
+      <br><br>
+      <span class="ui-float-label" >
+        <input id="float-input" size="30" pInputText pPassword type="password" (click)="find()"  formControlName="password" id="uPass" >
+        <label for="float-input"><span class="glyphicon glyphicon-eye-close"></span>Password</label>
+        <span class="text-danger" *ngIf="registerForm.get('password').invalid
+        && registerForm.get('password').touched" >Enter a valid password
+        </span>
+        
+      </span>
+      <br><br>
+      <span class="ui-float-label" >
+        
+        <input id="float-input" size="30" pInputText type="text" formControlName="name" id="uName" class="ng-dirty ng-invalid" >
+        <label for="float-input"><span class="glyphicon glyphicon-user"></span>Name</label>
+        <span class="text-danger" *ngIf="registerForm.get('name').invalid
+        && registerForm.get('name').touched" >
+        <p *ngIf="registerForm.controls.name.errors.nameError" > {{registerForm.controls.name.errors.nameError.message}} </p>
+        </span> 
+        <!-- <p-message severity="error" text="Enter a valid name" ></p-message> -->
+      </span>
+      <br><br>
+      <span class="ui-float-label" >
+        <input id="float-input" size="30" pInputText type="text" #d (click)="d.type='date'" (blur)="d.type='text'" formControlName="date" id="uDate" >
+        <label for="float-input"><span class="glyphicon glyphicon-calendar" ></span>Date of Birth</label>
+        <span class="text-danger" *ngIf="registerForm.get('date').invalid
+        && registerForm.get('date').touched" >
+        <p *ngIf="registerForm.controls.date.errors.dateError" > {{registerForm.controls.date.errors.dateError.message}} </p>
+        </span>
+      </span>
+      <br><br>
+      <span class="ui-float-label" >
+        
+        <input id="float-input" size="10" pInputText  pKeyFilter="int" type="number" formControlName="phone" id="uPhone" >
+        <label for="float-input"><span class="glyphicon glyphicon-phone"></span>Phone No.</label>
+        <span class="text-danger" *ngIf="registerForm.get('phone').invalid
+        && registerForm.get('phone').touched" >
+        <p *ngIf="registerForm.controls.phone.errors.phoneError" > {{registerForm.controls.phone.errors.phoneError.message}} </p> 
+        </span>
+      </span>
+      <div>
+        
+              <!-- <p-growl [value]="msgs" sticky="sticky"></p-growl> -->
+      
+              <!-- <p-captcha siteKey="YOUR_SITE_KEY" (onResponse)="showResponse($event)"></p-captcha> -->
+          
+      </div>
+      <br><br>
+      <button pButton label="register" type="submit" [disabled]="registerForm.invalid" class="ui-button-primary" ></button>
+
+      <br><br>
+    </form>
+    <div class="form-group" >
+      <div *ngIf="errorMessage != null" class="ui-messages-error" >
+        {{errorMessage}}
+      </div>
+      <div *ngIf="successMessage != null " class="ui-messages-success" >
+        {{successMessage}}
+      </div>
+    </div>
+    
+
+  </div>
+</div> 

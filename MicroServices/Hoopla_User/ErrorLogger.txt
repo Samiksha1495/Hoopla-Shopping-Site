@@ -1,0 +1,62 @@
+Error: Use another Email
+    at C:\Users\rashika.prabakaran\Desktop\group6\HooplaToTrainee\MicroServices\Hoopla_User\public\javascripts\DAL.js:56:11
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+Error: Use another Email
+    at C:\Users\rashika.prabakaran\Desktop\group6\HooplaToTrainee\MicroServices\Hoopla_User\public\javascripts\DAL.js:56:11
+    at C:\Users\samiksha.gupta\Desktop\HooplaToTrainee\MicroServices\Hoopla_User\public\javascripts\DAL.js:56:11
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+Error: Invalid credentials, please retry with correct credentials!
+    at C:\Users\rashika.prabakaran\Desktop\group6\HooplaToTrainee\MicroServices\Hoopla_User\public\javascripts\DAL.js:20:15
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+Error: Invalid credentials, please retry with correct credentials!
+    at C:\Users\rashika.prabakaran\Desktop\group6\HooplaToTrainee\MicroServices\Hoopla_User\public\javascripts\DAL.js:20:15
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+Error: Invalid credentials, please retry with correct credentials!
+    at C:\Users\samiksha.gupta\Desktop\HooplaToTrainee\MicroServices\Hoopla_User\public\javascripts\DAL.js:20:15
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+Error: Invalid credentials, please retry with correct credentials!
+    at C:\Users\samiksha.gupta\Desktop\HooplaToTrainee\MicroServices\Hoopla_User\public\javascripts\DAL.js:20:15
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+Error: Use another Email
+    at C:\Users\samiksha.gupta\Desktop\HooplaToTrainee\MicroServices\Hoopla_User\public\javascripts\DAL.js:56:11
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+MongoNetworkError: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\topologies\server.js:505:11)
+    at Pool.emit (events.js:189:13)
+    at Connection.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\connection\pool.js:329:12)
+    at Object.onceWrapper (events.js:277:13)
+    at Connection.emit (events.js:189:13)
+    at Socket.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\connection\connection.js:245:50)
+    at Object.onceWrapper (events.js:277:13)
+    at Socket.emit (events.js:189:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+MongoNetworkError: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\topologies\server.js:505:11)
+    at Pool.emit (events.js:189:13)
+    at Connection.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\connection\pool.js:329:12)
+    at Object.onceWrapper (events.js:277:13)
+    at Connection.emit (events.js:189:13)
+    at Socket.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\connection\connection.js:245:50)
+    at Object.onceWrapper (events.js:277:13)
+    at Socket.emit (events.js:189:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+MongoNetworkError: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\topologies\server.js:505:11)
+    at Pool.emit (events.js:189:13)
+    at Connection.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\connection\pool.js:329:12)
+    at Object.onceWrapper (events.js:277:13)
+    at Connection.emit (events.js:189:13)
+    at Socket.<anonymous> (D:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_User\node_modules\mongodb-core\lib\connection\connection.js:245:50)
+    at Object.onceWrapper (events.js:277:13)
+    at Socket.emit (events.js:189:13)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)

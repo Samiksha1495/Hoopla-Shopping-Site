@@ -1,0 +1,44 @@
+use hoopla;
+
+db.checkout.drop();
+
+db.createCollection('checkout');
+
+
+db.checkout.find().pretty()
+
+use hoopla;
+
+db.Hoopla_users.drop();
+
+db.createCollection('Hoopla_users');
+
+
+db.Hoopla_users.insert({
+    "_id" : ObjectId("5b18b2acf6e7db2edc23f1a1"),
+    "uCredentials" : {
+        "uEmail" : "lucky@gmail.com",
+        "uPass" : "lucky"
+    },
+    "uProfile" : {
+        "uName" : "Lucky",
+        "uDOB" : "2018-06-08",
+        "uPhone" : 8265839081,
+        "uIsSeller" : false,
+        "uDateJoined" : ISODate("2018-06-07T04:21:00.760Z"),
+        "uLastLogin" : ISODate("2018-06-12T11:30:28.340Z")
+    },
+    "uCart" : [],
+    "uAddress" : [{
+            "line1" : "door no 4",
+            "line2" : "6th main road, near ganesh temple",
+            "line3" : "Mysore-538292, Karnataka"
+        }, 
+        {
+            "line1" : "house no 729",
+            "line2" : "gokulam 3rd stage, 13th cross",
+            "line3" : "Mysore-05, Karnataka"
+        }]
+})
+
+db.Hoopla_users.find().pretty()

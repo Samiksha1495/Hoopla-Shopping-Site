@@ -1,0 +1,82 @@
+db.users.insert({
+    "_id" : 1,
+    "cart" : [{
+        "pid" : "1004",
+        "sellerEmail" : "kshitize@gmail.com",
+        "quantity" : "1"
+    },
+	{
+        "pid" : "1005",
+        "sellerEmail" : "kshitize@gmail.com",
+        "quantity" : "1"
+    }],
+    "credentials" : {
+        "UserEmail" : "rachita@gmail.com",
+        "password" : "abcd@123",
+		"dateModifiedOn" : ISODate("2013-12-21T00:00:00.000Z")
+    },
+    "profile" : {
+		"firstname" : "Rachita",
+        "lastname" : "Sinha",
+		"DOB" : ISODate("1992-08-28T06:56:00.000Z"),
+		"lastLogin" : ISODate("2017-11-21T01:34:00.000Z"),
+		"dateJoined" : ISODate("2013-12-17T00:00:00.000Z"),
+        "phoneNo" : "9182738291",
+        "isSeller" : "true"
+    },
+    "address" : [ 
+        {
+            "line1" : "door no 4",
+            "line2" : "6th main road, near ganesh temple",
+            "line3" : "Mysore-538292, Karnataka"
+        }, 
+        {
+            "line1" : "house no 729",
+            "line2" : "gokulam 3rd stage, 13th cross",
+            "line3" : "Mysore-05, Karnataka"
+        }
+    ]
+});
+
+
+
+
+{
+    "_id" : 2,
+    "cart" : [{
+        "pid" : "1004",
+        "sellerEmail" : "kshitize@gmail.com",
+        "quantity" : "1"
+    },
+	{
+        "pid" : "1005",
+        "sellerEmail" : "kshitize@gmail.com",
+        "quantity" : "1"
+    }],
+    "credentials" : {
+        "UserEmail" : "rachita666@gmail.com",
+        "password" : "abcd@123",
+		"dateModifiedOn" :""
+    },
+    "profile" : {
+		"firstname" : "Rachita",
+        "lastname" : "Sinha",
+		"DOB" :"",
+		"lastLogin" : "",
+		"dateJoined" :"",
+        "phoneNo" : "9182738291",
+        "isSeller" : "true"
+    },
+    "address" : [ 
+        {
+            "line1" : "door no 4",
+            "line2" : "6th main road, near ganesh temple",
+            "line3" : "Mysore-538292, Karnataka"
+        }, 
+        {
+            "line1" : "house no 729",
+            "line2" : "gokulam 3rd stage, 13th cross",
+            "line3" : "Mysore-05, Karnataka"
+        }
+    ]
+}

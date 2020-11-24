@@ -1,0 +1,21 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"ecmaFeatures": {
+		  "experimentalObjectRestSpread": true
+		}
+	  },
+	"rules":{
+		"comma-dangle": 2,
+		"quotes": 0,
+		"camelcase": 1,
+		"no-empty-function": 1,
+		"comma-spacing": 1,
+		"no-eval": 1
+	},
+	
+	"env": {
+		"browser": true,
+		"node": true
+	}
+}

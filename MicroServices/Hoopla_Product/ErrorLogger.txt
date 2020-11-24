@@ -1,0 +1,4 @@
+Error: data does not updated
+    at F:\hoopla\HooplaToTrainee-master\MicroServices\Hoopla_Product\public\javascripts\productDAL.js:80:31
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)

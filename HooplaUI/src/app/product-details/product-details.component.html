@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<p-growl [(value)]="msgs"></p-growl>
+<div align="left" class="col-md-offset-2 col-md-4">
+  
+  <img src="assets/img/{{data?.image}}" >
+</div>
+<div class="col-md-offset-1">
+  <h2>{{data?.pName}} <span class="label label-warning ">{{data?.pRating}}<span class="glyphicon glyphicon-star"></span></span></h2>
+  <p>By Seller {{data?.pSeller.s_Id}}</p>
+  <label>Description:</label>
+  <p>{{data?.pDescription}}</p>
+  
+  <ul><label>Specification:</label>
+    <li><b>Color:</b>{{data?.color}}</li>
+  </ul>
+  <br>
+      
+  <h3>Price:<i class="fa fa-rupee">{{discountedPrice}}</i></h3>
+  <h4><del class="fa fa-rupee">{{data?.price}}</del></h4>
+  <h3 ><span class="color">{{discount}}% Off </span>+<i class="fa fa-rupee">{{data?.pSeller.pShippingCharges}} </i> shipping charges</h3>
+  <p><b>Quantity left:</b>{{data?.pSeller.pQuantity}}</p>
+  
+  <button class="button " (click)="showViaService(data.pName);addCart(data._id)">Add to Cart</button>&ensp;
+  
+  <button class="button" (click)="goBack()" style="background-color:rgb(218, 168, 5)">Go Back</button>
+
+
+</div>

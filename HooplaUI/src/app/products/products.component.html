@@ -1,0 +1,62 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<p-growl [(value)]="msgs"></p-growl>
+<div  *ngIf="show && !searchShow ">
+<h3>Showing products {{category}}</h3>
+<div class="row" >
+  <!-- <p-card class="ui-g-sm-3" styleClass="ui-card-shadow"> -->
+  <div class="flex-container" >
+    <div  class="card col-md-3" *ngFor="let d of data" style="width:250px;margin:3%;border:2px;padding:15px"> 
+        <div (click)="nav(d._id)">
+            <img  class="img-thumbnail img-rounded img" src="assets/img/{{d.image}}" alt="First slide" >
+            <p  class="text-info category" >{{d.pName}}</p>
+        </div>
+                <p class="label label-warning">{{d.pRating}}
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+                <p >{{d.pDescription}}</p>
+                <div style="position:absolute;bottom:10px">
+                <button pButton label="Add to cart" class="btn btn-primary" (click)="showViaService(d.pName);addCart(d._id)" name="addtocart"></button>
+                <!-- <p-splitButton label="Save" icon="pi pi-check" (onClick)="addCart(d)" [model]="items"></p-splitButton> -->
+                <b style="font-size:20px;padding-left: 16px;"class="fa fa-inr">{{d.price}}</b> 
+                </div>
+                <br>  
+          </div>
+      </div>
+    </div>
+</div>
+
+
+
+  
+<div *ngIf="searchShow && dataSearch && !show && notFound">
+    <h3>Showing products </h3>
+    <div class="row" >
+      <!-- <p-card class="ui-g-sm-3" styleClass="ui-card-shadow"> -->
+      <div class="flex-container" >
+        <div  class="card col-md-3" *ngFor="let d of dataSearch" style="width:250px;margin:3%;border:2px;padding:15px"> 
+            <div (click)="nav(d._id)">
+                <img  class="img-thumbnail img-rounded img" src="assets/img/{{d.image}}" alt="First slide" >
+                <p  class="text-info category" >{{d.pName}}</p>
+            </div>
+                    <p class="label label-warning">{{d.pRating}}
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
+                    <p >{{d.pDescription}}</p>
+                    <div style="position:absolute;bottom:10px">
+                    <button pButton label="Add to cart" class="btn btn-primary" (click)="showViaService(d.pName);addCart(d._id);"></button>
+                    <!-- <p-splitButton label="Save" icon="pi pi-check" (onClick)="addCart(d)" [model]="items"></p-splitButton> -->
+                    <b style="font-size:20px"class="fa fa-inr">{{d.price}}</b> 
+                    </div>
+                    <br>  
+              </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+

@@ -1,0 +1,52 @@
+<div class="row"> 
+    <div class="col-md-5 col-md-offset-4 ">
+        <h1>Login</h1>
+        <br>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+            <span class="ui-float-label">
+                    <input  id="float-input" size="30" pInputText type="email" formControlName="emailId" id="uEmailId" name="email"> 
+                    <label for="float-input">Username</label>
+                    <span class="error-message" *ngIf="loginForm.get('emailId').invalid 
+                    && loginForm.get('emailId').touched">Enter the valid email id
+                    </span>
+            </span>
+            <br>
+            <br>
+            <span class="ui-float-label">
+                    <input id="float-input " type="password" size="30" pInputText formControlName="password" id="uPass" name="password"> 
+                    <label for="float-input">Password</label>
+                    <span class="error-message" *ngIf="loginForm.get('password').invalid 
+                    && loginForm.get('password').touched">Enter a valid password
+                    </span>
+            </span> 
+            <br>
+            <br>
+
+            <button pButton label="LOGIN" type="submit" [disabled]="loginForm.invalid" name="login"></button>
+            
+            <br/> 
+            <br>
+            <span class="text-warning"><b>New to HOOPLA...? Click the button to register for free</b><span class="glyphicon glyphicon-hand-down"></span></span>
+            <br>
+            <br>
+            
+             
+        </form>
+        <div class="form-group">
+            <div *ngIf="errorMessage!=null" class="text-danger">
+                {{errorMessage}}
+            </div>
+            <div *ngIf="successMessage!=null" class="text-success">
+                {{successMessage}}
+            </div>
+        </div>
+        <!--can be a button or a link based on need -->
+        <button pButton [routerLink]='["/register"]' label="Register" name="registerlink" class="ui-button-secondary"></button>
+        
+
+    </div>
+</div>
+
+
+
+    

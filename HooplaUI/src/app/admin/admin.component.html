@@ -1,0 +1,30 @@
+<div class="form-group">
+  <label>From Date:</label>
+  <input type="date" class="form-control" [(ngModel)]="fromDate">
+</div>
+<div class="form-group">
+  <label>To Date:</label>
+  <input type="date" class="form-control" [(ngModel)]="toDate">
+</div>
+<input type="submit" (click)="check(fromDate,toDate)" class="btn btn-primary">
+<div *ngIf="tableArr.length>0">
+<table class="table">
+  <tr>
+    <th>Email</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+  <tr *ngFor="let i of tableArr">
+    <td> {{i.email}} </td>
+    <td> {{i.total}} </td>
+    <td> {{i.dbdate}} </td>
+  </tr>
+</table>
+
+
+<button type="button"(click)="generate()" class="btn btn-success">Generate graph</button>
+<div *ngIf="bool1">
+    <p-chart type="bar" [data]="data"></p-chart>
+</div>
+
+</div>

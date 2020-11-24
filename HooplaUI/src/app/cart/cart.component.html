@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div *ngIf="!details" align="center" ><p-progressSpinner></p-progressSpinner></div>
+<div class="container-fluid">
+  <div class="row" *ngIf="pArr">
+    <div class="col-md-8">
+      
+        <div *ngIf="pArr.length==cart.length">
+            <h3><b>You have {{pArr.length}} products in your cart!</b></h3>
+          <div *ngFor="let i of pArr, let j=index">
+            <div class="cart-card cart-card-inner ">
+              
+                <span class="notify-badge">{{i.pSeller.pDiscount*100}}% OFF</span>
+                <img src ="../assets/img/{{i.image}}" class="img-rounded zoom">
+              
+              <div class="product-text">
+                <h4 class="text-primary">{{i?.pName}}</h4> 
+                <h5><b>{{i?.pSeller?.pQuantity}} products left in stock</b></h5>
+                <h5><b>Delivery Time: </b>Delivery in 7 Business days</h5>  
+                <h5 name="quantity"><b>Quantity in Cart: </b>
+                  <br>
+                  <br>
+                  <span class="form-group">
+                    <input type="number" class="form-control" min="1" [max]="i.pSeller.pQuantity" [(ngModel)]="cart[j].pQuantity" (input)="update(j,i._id)">
+                    <!-- <p-spinner type="number"  min="1" max="{{i.pSeller.pQuantity}}" [(ngModel)]="cart[j].pQuantity" (input)="update(j,i._id)"></p-spinner> -->
+                    <div class="alert alert-danger" *ngIf="cart[j].pQuantity>=i.pSeller.pQuantity">
+                      Only  {{i.pSeller.pQuantity}} items left in stock
+                    </div>
+                    <div class="alert alert-danger" *ngIf="cart[j].pQuantity==0">
+                      Quantity cannot be less than 1
+                    </div> 
+                  </span>
+                </h5>      
+              </div>
+              <div >
+                <h4><b>Discounted Price:</b></h4> 
+                
+                <h4><i class="fa fa-inr"></i> {{cart[j].pQuantity*(i?.price-(i?.price*i?.pSeller?.pDiscount)) | number:'.2-3'}}</h4>
+                <h4>+ Shipping charges: <i class="fa fa-inr"></i> {{i?.pSeller?.pShippingCharges}}</h4>
+                <br>
+
+                <button type="button" class="fa fa-trash-o btn btn-danger" (click)="delete(i._id,j); showViaService()"> Remove from cart</button>
+              </div>        
+            </div>
+          </div>
+        </div>
+      {{success}}
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="pArr.length!=0">
+      <h3><b>Price Details</b></h3>
+      <div class="cart-card-inner">
+        <table class="table">
+          <tr>
+            <td><b>Cart Total(MRP):</b></td>
+            <!-- <td>Rs. {{total|number:'.2'}}</td> -->
+            <td>
+              <span class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i class="fa fa-inr"></i></span>
+              <input type="text" pInputText value="{{total|number:'.2'}}" readonly>
+              </span> 
+            </td>
+          </tr>
+          <tr>
+            <td><b>Total Tax(17% by default):</b></td>
+            <td>
+              <!-- Rs. {{tax|number:'.2'}} -->
+              <span class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-inr"></i></span>
+                <input type="text" pInputText value="{{tax|number:'.2'}}" readonly>
+              </span> 
+            </td>
+          </tr>
+          <tr>
+            <td><b>Total payable:</b></td>
+            <td>
+              <!-- Rs. {{finalAmount|number:'.2'}} -->
+              <span class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-inr"></i></span>
+                <input type="text" pInputText value="{{finalAmount|number:'.2'}}" readonly>
+              </span> 
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button type="button" class="btn btn-primary btn-block" (click)="checkOut()" name="check">Checkout Now</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div *ngIf="errorMessage" class="text-center text-danger">{{errorMessage}}</div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<div *ngIf="pArr.length==0">
+  <img src="../assets/img/empty-cart.png" class="center">
+  <button type="button" (click)="navigateProductView()" class="btn btn-primary center-block" id="buttonNav"><span>Go Shopping</span></button>
+</div>
+
+<p-growl [(value)]="msgs"></p-growl>

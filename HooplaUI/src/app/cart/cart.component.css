@@ -1,0 +1,79 @@
+#buttonNav {
+    border-radius: 4px;
+    background-color: #1b190d;
+    border: none;
+    color: rgb(226, 202, 62);
+    text-align: center;
+    font-size: 23px;
+    padding: 20px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 40%;
+    margin-top: 1%
+  }
+  
+  #buttonNav span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #buttonNav span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #buttonNav:hover span {
+    padding-right: 25px;
+  }
+  
+  #buttonNav:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .notify-badge{
+    position: relative;
+    background: rgb(235, 17, 35);
+    height:2rem;
+    top:0rem;
+    left:3rem;
+    width:5rem;
+    text-align: center;
+    line-height: 2rem;;
+    font-size: 1rem;
+    border-radius: 50%;
+    color:white;
+    border:1px solid rgb(240, 226, 226);
+    border-radius: 7px 7px 7px 7px;
+}
+
+.zoom {
+
+    transition: transform .2s; /* Animation */
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: 1s all;
+}
+
+.zoom:hover, .zoom:focus {
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+  

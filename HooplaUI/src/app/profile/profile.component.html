@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<p-growl [(value)]="msgs"></p-growl>
+<div class="panel panel-primary" style="margin:50px">
+  <div class="panel-heading" style="font-size:20px" align="center"> <span class=" glyphicon glyphicon-user" ></span>your Profile</div>
+  <form >
+  <div class="panel-body" *ngFor="let d of userdetails?.message">
+      <div class="ui-g ui-fluid">
+          <div class="ui-g-12">
+              <div class="ui-inputgroup">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-user">Email</i></span>
+                  <input type="text" pInputText placeholder="Email" value={{d.uCredentials.uEmail}} readonly>        
+            </div>
+      </div>
+  </div>
+  <div class="ui-g ui-fluid">
+      <div class="ui-g-12">
+          <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i class="fa fa-user">Username</i></span>
+              <input type="text" pInputText placeholder="Username" value={{d.uProfile.uName}} readonly>        
+        </div>
+  </div>
+</div>
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user">DOB</i></span>
+            <input type="text" pInputText placeholder="Date of birth" value={{d.uProfile.uDOB}} readonly>        
+      </div>
+</div>
+</div>
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user">Mobile</i></span>
+            <input type="text" pInputText placeholder="Phone number" value={{d.uProfile.uPhone}} readonly>        
+      </div>
+</div>
+</div>
+<br>
+<br>
+  <div class="panel-footer" align="center">
+    <button class="btn btn-primary" (click)="showViaService()">Verify Details</button>
+  </div>
+
+</div>
+</form>
+</div>

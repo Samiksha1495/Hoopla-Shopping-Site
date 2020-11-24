@@ -1,0 +1,83 @@
+<p-growl [(value)]="msgs"></p-growl>
+<div class="container-fluid" *ngIf="totalOrders">
+  <div class="col-md-10 col-md-offset-1 " >
+    <h1>My Orders</h1>
+    <div class="styleDepth" *ngFor="let order of firstOrder?.reverse()">
+        <br>
+        <div class="row">
+          <div class="col-sm-2 col-sm-offset-1">
+            <h4><b>Order Id</b></h4>
+            {{order?.orderId}}
+          </div>
+          <div class="col-sm-6">
+            <div><h4><b>PID</b></h4></div>
+            <div *ngFor="let orders of order.uCart">                                                                                                                                                                           
+              Product id is <a routerLink="/productDetail/{{orders?.p_Id}}">{{orders?.p_Id}}</a> ,  quantity : {{orders?.pQuantity}}<span>&nbsp; &nbsp;</span><span *ngIf="flag"><p-spinner size="30" [min]="1" [(ngModel)]="orders.pQuantity"></p-spinner></span><span *ngIf="flag"><span>&nbsp; &nbsp;</span><br>
+              <button  class="btn btn-success" (click)="confirmOrder(orders.p_Id,orders.pQuantity);showViaService(orders.p_Id)">Confirm</button></span>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <h4><b>Email</b></h4>
+            {{email}}
+          </div>  
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-3 col-sm-offset-1">
+            Order on :<b>{{order?.date|date:'yyyy-MM-dd HH:mm'}}</b>
+          </div>
+          <div class="col-sm-5">
+            <button (click)="goBack()" *ngIf="flag" class="btn btn-info">Go Back</button><span>&nbsp; &nbsp;</span>
+            <button (click)="editOrder()"  class="btn btn-primary">Edit</button> <span>&nbsp; &nbsp;</span>
+            <span><button   class="btn btn-danger" (click)="cancelOrder()">Cancel</button></span>
+          </div>
+          <div class="col-sm-3">
+            <h5>Total Cost:</h5><b>{{order?.amount | currency:'INR':false}}</b>
+          </div>
+          <div *ngIf="errorUpdateMessage" class="text-center text-danger">{{errorUpdateMessage}}</div>
+        </div>
+        <div class="row" *ngIf="order.modified">
+            <div class="col-sm-3 col-sm-offset-1">
+              Modifed on :<b>{{order?.modified|date:'yyyy-MM-dd HH:mm'}}</b>
+            </div>
+        </div>
+      </div>
+    <div *ngFor="let order of totalOrders?.reverse()" class="styleDepth">
+    <br>
+    <div class="row">
+      <div class="col-sm-3 col-sm-offset-1">
+        <h4><b>Order Id</b></h4>
+        {{order?.orderId}}
+      </div>
+      <div class="col-sm-5">
+        <div><h4><b>PID</b></h4></div>
+        <div *ngFor="let orders of order.uCart">
+          Product id is <a routerLink="/productDetail/{{orders?.p_Id}}">{{orders?.p_Id}}</a> ,  quantity : {{orders?.pQuantity}}
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <h4><b>Email</b></h4>
+        {{email}}
+      </div>  
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-7 col-sm-offset-1">
+        Order on :<b>{{order?.date|date:'yyyy-MM-dd HH:mm'}}</b>
+      </div>
+      <div class="col-sm-3 col-sm-offset-1">
+        <h5>Total Cost:</h5><b>{{order?.amount | currency:'INR':false}}</b>
+      </div>
+    </div>
+    <div class="row" *ngIf="order.modified">
+        <div class="col-sm-3 col-sm-offset-1">
+          Modifed on :<b>{{order?.modified|date:'yyyy-MM-dd HH:mm'}}</b>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!totalOrders">
+  <img src='../assets/img/empty-orders.jpg' class="center">
+</div>
+
