@@ -17,7 +17,9 @@ export class AdminComponent implements OnInit {
   email:string;
   dbdate:Date;
   data: any;
-  bool1:boolean=false;;
+  bool1:boolean=false;
+  fromDate:Date;
+  toDate:Date;
   constructor( public adminService: AdminService ) { }
 
   ngOnInit() {
